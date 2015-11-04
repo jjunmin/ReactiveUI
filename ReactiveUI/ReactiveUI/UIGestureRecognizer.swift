@@ -58,7 +58,7 @@ internal extension UIGestureRecognizer {
     }
     
     private func setProxyTargets(newValue: RUIGestureRecognizerProxyTarget) -> RUIGestureRecognizerProxyTarget {
-        objc_setAssociatedObject(self, &RUIProxyTargetsKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, &RUIProxyTargetsKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return newValue
     }
     

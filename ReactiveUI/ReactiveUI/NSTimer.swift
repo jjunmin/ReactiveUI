@@ -53,7 +53,7 @@ internal extension NSTimer {
     }
     
     private func setProxyTargets(newValue: RUITimerProxyTarget) -> RUITimerProxyTarget {
-        objc_setAssociatedObject(self, &RUIProxyTargetsKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, &RUIProxyTargetsKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         return newValue
     }
     
